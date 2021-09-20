@@ -15,7 +15,7 @@ Feature: User get all posts data
     And match each response[*].body == '#string'
     And match response == '#[100]'
 
-    * def expectedJSONEachPost =
+    * def schemaEachPost =
     """
     {
       "userId": '#number',
@@ -25,5 +25,5 @@ Feature: User get all posts data
     }
     """
 
-    And match each response == expectedJSONEachPost
+    And match each response == schemaEachPost
 

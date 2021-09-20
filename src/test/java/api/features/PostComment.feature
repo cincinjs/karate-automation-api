@@ -3,7 +3,7 @@ Feature: User get comment by some post id
   Background:
     * url baseURL
 
-  Scenario: User get comment by id
+  Scenario: User get comment by postId
     Given path 'posts'
     When method get
     Then status 200
@@ -23,13 +23,13 @@ Feature: User get comment by some post id
 
     * def schemaEachComment =
     """
-      {
-        "postId": '#number',
-        "id": '#number',
-        "name": '#string',
-        "email": '#string',
-        "body": '#string'
-      }
+    {
+      "postId": '#number',
+      "id": '#number',
+      "name": '#string',
+      "email": '#string',
+      "body": '#string'
+    }
     """
     And match each response == schemaEachComment
 
